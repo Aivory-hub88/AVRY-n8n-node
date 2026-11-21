@@ -12,7 +12,7 @@ export class AivoryApi implements ICredentialType {
 
 	icon = { light: 'file:aivory.svg', dark: 'file:aivory.dark.svg' } as const;
 
-	documentationUrl = 'https://aivory.id';
+	documentationUrl = 'https://aivory.uk';
 
 	properties: INodeProperties[] = [
 		{

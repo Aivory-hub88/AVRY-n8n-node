@@ -1,6 +1,6 @@
 # n8n-nodes-aivory
 
-n8n community node for [Aivory](https://aivory.id) Cerveau agents. Send a message to your deployed agent and use its reply in any workflow, or attach it as a tool to an n8n AI Agent (`usableAsTool`).
+n8n community node for [Aivory](https://aivory.uk) Cerveau agents. Send a message to your deployed agent and use its reply in any workflow, or attach it as a tool to an n8n AI Agent (`usableAsTool`).
 
 ## Credentials
 Create an API key in the Aivory dashboard (Agents → your agent → Deploy → API; Pro plan or above). One key = one agent. Paste it into the **Aivory API** credential. Base URL defaults to `https://backend.aivory.id`.

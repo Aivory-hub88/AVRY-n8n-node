@@ -15,7 +15,7 @@ export class Aivory implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Aivory',
 		name: 'aivory',
-		icon: 'file:aivory.svg',
+		icon: { light: 'file:aivory.svg', dark: 'file:aivory.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
@@ -144,7 +144,9 @@ export class Aivory implements INodeType {
 					});
 					continue;
 				}
-				if (error instanceof NodeOperationError) throw error;
+				if (error instanceof NodeOperationError) {
+					throw new NodeOperationError(this.getNode(), error.message, { itemIndex: i });
+				}
 				throw new NodeApiError(this.getNode(), error as never, {
 					itemIndex: i,
 					message: friendlyMessage(error),

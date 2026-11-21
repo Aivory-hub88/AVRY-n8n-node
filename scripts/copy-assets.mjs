@@ -2,7 +2,7 @@
 import { cpSync, readdirSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-for (const dir of ['nodes/Aivory']) {
+for (const dir of ['nodes/Aivory', 'credentials']) {
   mkdirSync(join('dist', dir), { recursive: true });
   for (const f of readdirSync(dir)) {
     if (f.endsWith('.svg') || f.endsWith('.png') || f.endsWith('.json')) {

@@ -1,9 +1,16 @@
-import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type {
+	IAuthenticateGeneric,
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from 'n8n-workflow';
 
 export class AivoryApi implements ICredentialType {
 	name = 'aivoryApi';
 
 	displayName = 'Aivory API';
+
+	icon = { light: 'file:aivory.svg', dark: 'file:aivory.dark.svg' } as const;
 
 	documentationUrl = 'https://aivory.id';
 
@@ -37,6 +44,12 @@ export class AivoryApi implements ICredentialType {
 		},
 	};
 
-	// No `test` request on purpose: the only public endpoint sends a message,
-	// which would spend a credit just to check the key.
+	// Validates the key and plan without sending a message (no credits spent).
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: '={{$credentials.baseUrl}}',
+			url: '/api/v1/agent-api/ping',
+			method: 'GET',
+		},
+	};
 }

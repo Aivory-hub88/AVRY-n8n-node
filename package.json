@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-aivory",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "n8n community node for Aivory Cerveau agents: send a message to your deployed Aivory agent and use the reply in any workflow or AI Agent.",
   "keywords": [
     "n8n-community-node-package",
@@ -12,7 +12,7 @@
   "homepage": "https://aivory.id",
   "author": {
     "name": "Aivory",
-    "email": "hello@aivory.id"
+    "email": "hello@aivory.uk"
   },
   "main": "index.js",
   "files": [

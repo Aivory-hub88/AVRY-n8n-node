@@ -8,7 +8,7 @@
     "cerveau",
     "ai-agent"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://aivory.id",
   "author": {
     "name": "Aivory",
@@ -47,5 +47,6 @@
   },
   "bugs": {
     "url": "https://github.com/Aivory-hub88/AVRY-n8n-node/issues"
-  }
+  },
+  "private": true
 }

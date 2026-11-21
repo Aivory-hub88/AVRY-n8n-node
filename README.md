@@ -16,5 +16,8 @@ npm install && npm run build
 ```
 Link into a local n8n: `npm link`, then in `~/.n8n/custom` run `npm link n8n-nodes-aivory` and restart n8n.
 
-## Distribution
-Proprietary, for Aivory customers only (see LICENSE). `package.json` is marked `private` so it cannot be published to npm by accident. Share it as a tarball (`npm pack`) or via a private registry, and install it on self-hosted n8n.
+## License
+MIT. The node is only useful with an Aivory account: every call needs an agent API key (Pro plan or above), is rate-limited per key and consumes credits.
+
+## Publish
+Name and `n8n-community-node-package` keyword are set. For n8n verification, publish from GitHub Actions with provenance (`npm publish --provenance`).

@@ -1,0 +1,10 @@
+{
+  "node": "n8n-nodes-aivory.aivory",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Communication", "Development"],
+  "resources": {
+    "credentialDocumentation": [{ "url": "https://aivory.id" }],
+    "primaryDocumentation": [{ "url": "https://aivory.id" }]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "n8n-nodes-aivory",
+  "version": "0.1.0",
+  "description": "n8n community node for Aivory Cerveau agents: send a message to your deployed Aivory agent and use the reply in any workflow or AI Agent.",
+  "keywords": [
+    "n8n-community-node-package",
+    "aivory",
+    "cerveau",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "homepage": "https://aivory.id",
+  "author": {
+    "name": "Aivory",
+    "email": "hello@aivory.id"
+  },
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.mjs",
+    "dev": "tsc --watch",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/AivoryApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Aivory/Aivory.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "n8n-workflow": "*",
+    "typescript": "^5.6.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aivory-hub88/AVRY-n8n-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aivory-hub88/AVRY-n8n-node/issues"
+  }
+}

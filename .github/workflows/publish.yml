@@ -2,6 +2,8 @@ name: Publish to npm
 
 # Publishes with npm Trusted Publishing (OIDC) + provenance, as required for
 # n8n community node verification. No NPM_TOKEN secret is used.
+# The trusted publisher is stage-only: CI uploads to npm's staging queue and a
+# maintainer approves it (with 2FA) at npmjs.com -> Staged Packages.
 # Trigger: push a tag like v0.1.0 (it must match package.json "version").
 on:
   push:
@@ -30,9 +32,12 @@ jobs:
             echo "Tag $GITHUB_REF_NAME does not match package.json version $PKG"; exit 1
           fi
 
+      - name: Upgrade npm (staged publishing needs >= 11.15)
+        run: npm install -g npm@^11.15.0
+
       - run: npm ci
       - run: npm run lint
       - run: npm run build
 
-      - name: Publish
-        run: npm publish --provenance --access public
+      - name: Stage publish
+        run: npm stage publish --provenance --access public

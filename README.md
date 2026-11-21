@@ -24,6 +24,8 @@ Publishing runs from GitHub Actions (`.github/workflows/publish.yml`) with npm T
 
 One-time setup on npmjs.com: package settings → Trusted Publisher → GitHub Actions, owner `Aivory-hub88`, repo `AVRY-n8n-node`, workflow filename `publish.yml`. (A brand-new package must exist on npm first; do the very first publish manually with `npm publish --access public`, then switch to the workflow.)
 
+Release flow: the workflow *stages* the release; approve it at npmjs.com → Staged Packages (2FA) and it goes live.
+
 Release: bump `version` in `package.json`, commit, then
 ```
 git tag v0.1.1 && git push origin v0.1.1

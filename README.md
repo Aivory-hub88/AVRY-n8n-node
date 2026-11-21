@@ -20,4 +20,11 @@ Link into a local n8n: `npm link`, then in `~/.n8n/custom` run `npm link n8n-nod
 MIT. The node is only useful with an Aivory account: every call needs an agent API key (Pro plan or above), is rate-limited per key and consumes credits.
 
 ## Publish
-Name and `n8n-community-node-package` keyword are set. For n8n verification, publish from GitHub Actions with provenance (`npm publish --provenance`).
+Publishing runs from GitHub Actions (`.github/workflows/publish.yml`) with npm Trusted Publishing and provenance, no npm token needed.
+
+One-time setup on npmjs.com: package settings → Trusted Publisher → GitHub Actions, owner `Aivory-hub88`, repo `AVRY-n8n-node`, workflow filename `publish.yml`. (A brand-new package must exist on npm first; do the very first publish manually with `npm publish --access public`, then switch to the workflow.)
+
+Release: bump `version` in `package.json`, commit, then
+```
+git tag v0.1.1 && git push origin v0.1.1
+```
